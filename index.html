@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="calculator-body">
+      <div class="display">
+        <div class="display-expression">121</div>
+        <div class="display-answer">234</div>
+      </div>
+      <div class="buttons">
+        <div class="button-row">
+          <button class="special" data-action="clear">AC</button>
+          <button class="special" data-action="backspace">&#x232b;</button>
+        </div>
+        <div class="button-row">
+          <button class="number" value="7">7</button>
+          <button class="number" value="8">8</button>
+          <button class="number" value="9">9</button>
+          <button class="operator" data-action="divide">&divide;</button>
+        </div>
+        <div class="button-row">
+          <button class="number" value="4">4</button>
+          <button class="number" value="5">5</button>
+          <button class="number" value="6">6</button>
+          <button class="operator" data-action="multiply">&times;</button>
+        </div>
+        <div class="button-row">
+          <button class="number" value="1">1</button>
+          <button class="number" value="2">2</button>
+          <button class="number" value="3">3</button>
+          <button class="operator" data-action="subtract">&minus;</button>
+        </div>
+        <div class="button-row">
+          <button class="number" value="0">0</button>
+          <button class="number" value=".">.</button>
+          <button class="equals" data-action="calculate">=</button>
+          <button class="operator" data-action="add">&plus;</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
