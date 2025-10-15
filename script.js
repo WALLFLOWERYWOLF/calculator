@@ -5,6 +5,7 @@ let operand1 = "";
 let operand2 = "";
 let operator = "";
 let answer = 0;
+let tempValue;
 
 function add(a, b) {
   a = Number(a);
@@ -81,6 +82,9 @@ buttons.addEventListener("click", (e) => {
   let value = e.target.value;
   switch (className) {
     case "number":
+      if (answer != "0") {
+        clear();
+      }
       if (operator == "" && operand2 == "") {
         operand1 = operand1 + value;
         populator();
