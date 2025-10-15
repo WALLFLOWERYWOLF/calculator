@@ -1,0 +1,108 @@
+const buttons = document.querySelector(".buttons");
+const displayExpression = document.querySelector(".display-expression");
+const displayAnswer = document.querySelector(".display-answer");
+let operand1 = "";
+let operand2 = "";
+let operator = "";
+let answer = 0;
+
+function add(a, b) {
+  a = Number(a);
+  b = Number(b);
+  return a + b;
+}
+
+function subtract(a, b) {
+  a = Number(a);
+  b = Number(b);
+  return a - b;
+}
+
+function multiply(a, b) {
+  a = Number(a);
+  b = Number(b);
+  return a * b;
+}
+
+function divide(a, b) {
+  a = Number(a);
+  b = Number(b);
+  return a / b;
+}
+
+function operate(operand1, operator, operand2) {
+  switch (operator) {
+    case "add":
+      return add(operand1, operand2);
+      break;
+    case "subtract":
+      return subtract(operand1, operand2);
+      break;
+    case "multiply":
+      return multiply(operand1, operand2);
+      break;
+    case "divide":
+      if (operand2 == "0") alert("You don't divide by zero, Einstein");
+      else return divide(operand1, operand2);
+      break;
+  }
+}
+
+function populator() {
+  let conOp = "";
+  switch (operator) {
+    case "add":
+      conOp = "+";
+      break;
+    case "subtract":
+      conOp = "-";
+      break;
+    case "multiply":
+      conOp = "x";
+      break;
+    case "divide":
+      conOp = "÷";
+      break;
+  }
+  displayExpression.textContent = `${operand1} ${conOp} ${operand2}`;
+  displayAnswer.textContent = answer;
+}
+
+function clear() {
+  operand1 = "";
+  operand2 = "";
+  operator = "";
+  answer = 0;
+  populator();
+}
+
+buttons.addEventListener("click", (e) => {
+  let className = e.target.className;
+  let value = e.target.value;
+  switch (className) {
+    case "number":
+      if (operator == "" && operand2 == "") {
+        operand1 = operand1 + value;
+        populator();
+      } else {
+        operand2 = operand2 + value;
+        populator();
+      }
+      break;
+    case "operator":
+      operator = value;
+      populator();
+      break;
+    case "equals":
+      answer = operate(operand1, operator, operand2);
+      populator();
+      break;
+    case "special":
+      if (value == "all-clear") {
+        clear();
+      }
+      break;
+  }
+});
+
+populator();
