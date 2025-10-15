@@ -34,6 +34,13 @@ body {
   font-size: 35px;
 }
 
+.display-answer,
+.display-expression {
+  height: 35px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .button-row {
   width: 100%;
   display: flex;
