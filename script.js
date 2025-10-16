@@ -86,11 +86,31 @@ buttons.addEventListener("click", (e) => {
         clear();
       }
       if (operator == "" && operand2 == "") {
-        operand1 = operand1 + value;
-        populator();
+        if (value == ".") {
+          if (operand1.split("").includes(".")) {
+            alert("invalid input");
+            populator();
+          } else {
+            operand1 = operand1 + value;
+            populator();
+          }
+        } else {
+          operand1 = operand1 + value;
+          populator();
+        }
       } else {
-        operand2 = operand2 + value;
-        populator();
+        if (value == ".") {
+          if (operand2.split("").includes(".")) {
+            alert("invalid input");
+            populator();
+          } else {
+            operand2 = operand2 + value;
+            populator();
+          }
+        } else {
+          operand2 = operand2 + value;
+          populator();
+        }
       }
       break;
     case "operator":
