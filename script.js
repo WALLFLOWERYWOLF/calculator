@@ -5,7 +5,6 @@ let operand1 = "";
 let operand2 = "";
 let operator = "";
 let answer = 0;
-let tempValue;
 
 function add(a, b) {
   a = Number(a);
