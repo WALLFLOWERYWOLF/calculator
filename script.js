@@ -4,30 +4,30 @@ const displayAnswer = document.querySelector(".display-answer");
 let operand1 = "";
 let operand2 = "";
 let operator = "";
-let answer = 0;
+let answer = "0";
 
 function add(a, b) {
   a = Number(a);
   b = Number(b);
-  return a + b;
+  return `${a + b}`;
 }
 
 function subtract(a, b) {
   a = Number(a);
   b = Number(b);
-  return a - b;
+  return `${a - b}`;
 }
 
 function multiply(a, b) {
   a = Number(a);
   b = Number(b);
-  return a * b;
+  return `${a * b}`;
 }
 
 function divide(a, b) {
   a = Number(a);
   b = Number(b);
-  return a / b;
+  return `${a / b}`;
 }
 
 function operate(operand1, operator, operand2) {
@@ -72,7 +72,7 @@ function clear() {
   operand1 = "";
   operand2 = "";
   operator = "";
-  answer = 0;
+  answer = "0";
   populator();
 }
 
