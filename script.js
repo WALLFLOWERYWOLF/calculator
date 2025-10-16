@@ -123,6 +123,17 @@ buttons.addEventListener("click", (e) => {
     case "special":
       if (value == "all-clear") {
         clear();
+      } else if (value == "backspace") {
+        if (operand2 != "") {
+          operand2 = operand2.slice(0, -1);
+          populator();
+        } else if (operator != "") {
+          operator = "";
+          populator();
+        } else {
+          operand1 = operand1.slice(0, -1);
+          populator();
+        }
       }
       break;
   }
