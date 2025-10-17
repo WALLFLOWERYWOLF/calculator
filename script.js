@@ -113,6 +113,20 @@ buttons.addEventListener("click", (e) => {
       }
       break;
     case "operator":
+      if (answer != "0") {
+        operand1 = answer;
+        operator = value;
+        operand2 = "";
+        answer = "0";
+        populator();
+      } else if (answer == "0" && operand1 != "" && operand2 != "") {
+        answer = operate(operand1, operator, operand2);
+        operand1 = answer;
+        operator = value;
+        operand2 = "";
+        answer = "0";
+        populator();
+      }
       operator = value;
       populator();
       break;
