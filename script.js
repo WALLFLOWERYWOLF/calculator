@@ -180,8 +180,12 @@ let keyboardMappings = {
 };
 
 document.addEventListener("keydown", (e) => {
-  let elementButton = document.querySelector(
-    `[value='${keyboardMappings[e.key]}']`
-  );
-  elementButton.click();
+  if (e.key in keyboardMappings) {
+    let elementButton = document.querySelector(
+      `[value='${keyboardMappings[e.key]}']`
+    );
+    elementButton.click();
+  } else {
+    console.log(`Unmapped Key: ${e.key}`);
+  }
 });
