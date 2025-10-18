@@ -188,4 +188,5 @@ document.addEventListener("keydown", (e) => {
   } else {
     console.log(`Unmapped Key: ${e.key}`);
   }
+  e.preventDefault;
 });
