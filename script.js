@@ -154,3 +154,37 @@ buttons.addEventListener("click", (e) => {
 });
 
 populator();
+
+// keyboard support
+
+document.addEventListener("keydown", (e) => {
+  let keyPressed = e.key;
+  let elementSelected = `[value='${keyboardMapper(keyPressed)}']`;
+  let elementButton = document.querySelector(elementSelected);
+  elementButton.click();
+});
+
+function keyboardMapper(keyPressed) {
+  let keyboardMappings = {
+    1: "1",
+    2: "2",
+    3: "3",
+    4: "4",
+    5: "5",
+    6: "6",
+    7: "7",
+    8: "8",
+    9: "9",
+    0: "0",
+    ".": ".",
+    "+": "add",
+    "-": "subtract",
+    "*": "multiply",
+    "/": "divide",
+    "=": "equals",
+    Enter: "equals",
+    Backspace: "backspace",
+    Delete: "all-clear",
+  };
+  return keyboardMappings[keyPressed];
+}
