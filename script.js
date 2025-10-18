@@ -157,34 +157,31 @@ populator();
 
 // keyboard support
 
+let keyboardMappings = {
+  1: "1",
+  2: "2",
+  3: "3",
+  4: "4",
+  5: "5",
+  6: "6",
+  7: "7",
+  8: "8",
+  9: "9",
+  0: "0",
+  ".": ".",
+  "+": "add",
+  "-": "subtract",
+  "*": "multiply",
+  "/": "divide",
+  "=": "equals",
+  Enter: "equals",
+  Backspace: "backspace",
+  Delete: "all-clear",
+};
+
 document.addEventListener("keydown", (e) => {
   let elementButton = document.querySelector(
-    `[value='${keyboardMapper(e.key)}']`
+    `[value='${keyboardMappings[e.key]}']`
   );
   elementButton.click();
 });
-
-function keyboardMapper(keyPressed) {
-  let keyboardMappings = {
-    1: "1",
-    2: "2",
-    3: "3",
-    4: "4",
-    5: "5",
-    6: "6",
-    7: "7",
-    8: "8",
-    9: "9",
-    0: "0",
-    ".": ".",
-    "+": "add",
-    "-": "subtract",
-    "*": "multiply",
-    "/": "divide",
-    "=": "equals",
-    Enter: "equals",
-    Backspace: "backspace",
-    Delete: "all-clear",
-  };
-  return keyboardMappings[keyPressed];
-}
