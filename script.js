@@ -58,7 +58,7 @@ function populator() {
       conOp = "-";
       break;
     case "multiply":
-      conOp = "x";
+      conOp = "×";
       break;
     case "divide":
       conOp = "÷";
