@@ -158,9 +158,9 @@ populator();
 // keyboard support
 
 document.addEventListener("keydown", (e) => {
-  let keyPressed = e.key;
-  let elementSelected = `[value='${keyboardMapper(keyPressed)}']`;
-  let elementButton = document.querySelector(elementSelected);
+  let elementButton = document.querySelector(
+    `[value='${keyboardMapper(e.key)}']`
+  );
   elementButton.click();
 });
 
