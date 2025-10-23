@@ -1,6 +1,7 @@
 const buttons = document.querySelector(".buttons");
 const displayExpression = document.querySelector(".display-expression");
 const displayAnswer = document.querySelector(".display-answer");
+const footer = document.querySelector(".footer");
 let operand1 = "";
 let operand2 = "";
 let operator = "";
@@ -74,6 +75,11 @@ function clear() {
   operator = "";
   answer = "0";
   populator();
+}
+
+function copyright() {
+  let currentYear = new Date().getFullYear();
+  footer.textContent = `${footer.textContent} ${currentYear} WALLFLOWERYWOLF`;
 }
 
 buttons.addEventListener("click", (e) => {
@@ -154,6 +160,7 @@ buttons.addEventListener("click", (e) => {
 });
 
 populator();
+copyright();
 
 // keyboard support
 
